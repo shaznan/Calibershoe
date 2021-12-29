@@ -1,16 +1,23 @@
 [
   {
     "id": 1,
-    "title": "Smart Products",
-    "subtitle": "Winter Offer 2020 Collection",
+    "title": "Caliber Footware",
+    "subtitle": "Formal Wear Collection For Men",
     "image": "/assets/img/slider/single-slide-hm1-2.png",
     "url": "/shop-grid-standard"
   },
   {
     "id": 2,
-    "title": "Smart Products",
-    "subtitle": "Summer Offer 2020 Collection",
+    "title": "Caliber Footware",
+    "subtitle": "Loafers Collection For Men",
     "image": "/assets/img/slider/single-slide-1.png",
+    "url": "/shop-grid-standard"
+  },
+  {
+    "id": 3,
+    "title": "Caliber Footware",
+    "subtitle": "Ankle Wear Collection",
+    "image": "/assets/img/slider/ankle_shoe.png",
     "url": "/shop-grid-standard"
   }
 ]

@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { animateScroll } from "react-scroll";
 import FooterCopyright from "../../components/footer/FooterCopyright";
 import FooterNewsletter from "../../components/footer/FooterNewsletter";
+import FooterLogoImage from "../../components/brand-logo/footer-logo.png";
 
 const FooterOne = ({
   backgroundColorClass,
@@ -13,7 +14,7 @@ const FooterOne = ({
   spaceRightClass,
   containerClass,
   extraFooterClass,
-  sideMenu
+  sideMenu,
 }) => {
   const [scroll, setScroll] = useState(0);
   const [top, setTop] = useState(0);
@@ -53,7 +54,7 @@ const FooterOne = ({
           >
             {/* footer copyright */}
             <FooterCopyright
-              footerLogo="/assets/img/logo/logo.png"
+              footerLogo={FooterLogoImage}
               spaceBottomClass="mb-30"
             />
           </div>
@@ -214,7 +215,7 @@ FooterOne.propTypes = {
   spaceBottomClass: PropTypes.string,
   spaceTopClass: PropTypes.string,
   spaceLeftClass: PropTypes.string,
-  spaceRightClass: PropTypes.string
+  spaceRightClass: PropTypes.string,
 };
 
 export default FooterOne;
