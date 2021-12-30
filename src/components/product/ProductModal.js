@@ -58,22 +58,27 @@ function ProductModal(props) {
   const gallerySwiperParams = {
     getSwiper: getGallerySwiper,
     spaceBetween: 10,
-    loopedSlides: 4,
-    loop: true
+    loopedSlides: 1,
+    loop: false,
   };
 
   const thumbnailSwiperParams = {
     getSwiper: getThumbnailSwiper,
-    spaceBetween: 10,
-    slidesPerView: 4,
-    loopedSlides: 4,
-    touchRatio: 0.2,
+    spaceBetween: 30,
+    slidesPerView: 1,
+    loopedSlides: 1,
+    touchRatio: 1,
     freeMode: true,
-    loop: true,
+    loop: false,
+    effect: "fade",
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
     slideToClickedSlide: true,
     navigation: {
       nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev"
+      prevEl: ".swiper-button-prev",
     },
     renderPrevButton: () => (
       <button className="swiper-button-prev ht-swiper-button-nav">
@@ -84,7 +89,7 @@ function ProductModal(props) {
       <button className="swiper-button-next ht-swiper-button-nav">
         <i className="pe-7s-angle-right" />
       </button>
-    )
+    ),
   };
 
   return (
@@ -142,15 +147,11 @@ function ProductModal(props) {
                 <div className="product-details-price">
                   {discountedprice !== null ? (
                     <Fragment>
-                      <span>
-                        {currency.currencySymbol + finaldiscountedprice}
-                      </span>{" "}
-                      <span className="old">
-                        {currency.currencySymbol + finalproductprice}
-                      </span>
+                      <span>{"LKR " + finaldiscountedprice}</span>{" "}
+                      <span className="old">{"LKR " + finalproductprice}</span>
                     </Fragment>
                   ) : (
-                    <span>{currency.currencySymbol + finalproductprice} </span>
+                    <span>{"LKR " + finalproductprice} </span>
                   )}
                 </div>
                 {product.rating && product.rating > 0 ? (
@@ -203,7 +204,7 @@ function ProductModal(props) {
                       <span>Size</span>
                       <div className="pro-details-size-content">
                         {product.variation &&
-                          product.variation.map(single => {
+                          product.variation.map((single) => {
                             return single.color === selectedProductColor
                               ? single.size.map((singleSize, key) => {
                                   return (
@@ -360,12 +361,12 @@ ProductModal.propTypes = {
   onHide: PropTypes.func,
   product: PropTypes.object,
   show: PropTypes.bool,
-  wishlistitem: PropTypes.object
+  wishlistitem: PropTypes.object,
 };
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
-    cartitems: state.cartData
+    cartitems: state.cartData,
   };
 };
 
